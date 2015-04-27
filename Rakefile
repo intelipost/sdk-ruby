@@ -8,4 +8,8 @@ task :coverage do
   Rake::Task["spec"].execute
 end
 
+task :console do
+  sh "irb -rubygems -r intelipost"
+end
+
 task :default => :spec
