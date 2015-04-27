@@ -1,6 +1,7 @@
+require "uri"
+require "hashie"
 require "faraday"
 require "faraday_middleware"
-require "hashie"
 require "intelipost/version"
 require "intelipost/fluent_interface"
 require "intelipost/client"

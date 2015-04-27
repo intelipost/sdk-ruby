@@ -22,6 +22,7 @@ module Intelipost
       Faraday.new(url: @uri.to_s) do |conn|
         conn.request :json
 
+        conn.response :mashify
         conn.response :json
 
         conn.headers['api_key'] = api_key

@@ -33,8 +33,8 @@ describe Intelipost::Client, :vcr do
     end
 
     describe '#cep' do
-      it 'returns an correct response' do
-        expect(subject.cep.address_complete('04661100')).to include('content')
+      it 'returns a Hashie::Mash' do
+        expect(subject.cep.address_complete('04661100').class).to be Hashie::Mash
       end
     end
   end
