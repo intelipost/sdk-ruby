@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday", "~> 0.9.1"
   spec.add_dependency "faraday_middleware", "~> 0.9.1"
   spec.add_dependency "hashie", "~> 3.4.1"
+  spec.add_dependency "dotenv", "~> 2.0.1"
 
   spec.add_development_dependency "bundler", "~> 1.9.4"
   spec.add_development_dependency "rake", "~> 10.4.2"

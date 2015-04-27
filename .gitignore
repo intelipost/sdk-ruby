@@ -19,6 +19,8 @@
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
+.env
+spec/cassettes
 
 # gem
 Gemfile.lock
