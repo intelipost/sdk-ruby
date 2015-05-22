@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/natuelabs/intelipost/badges/gpa.svg)](https://codeclimate.com/github/natuelabs/intelipost)
+[![Build Status](https://travis-ci.org/natuelabs/intelipost.svg?branch=master)](https://travis-ci.org/natuelabs/intelipost)
+
 # intelipost
 Gem for the Intelipost API
 
