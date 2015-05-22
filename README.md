@@ -1,5 +1,8 @@
-[![Code Climate](https://codeclimate.com/github/natuelabs/intelipost/badges/gpa.svg)](https://codeclimate.com/github/natuelabs/intelipost)
+[![Gem Version](https://badge.fury.io/rb/intelipost.svg)](http://badge.fury.io/rb/intelipost)
 [![Build Status](https://travis-ci.org/natuelabs/intelipost.svg?branch=master)](https://travis-ci.org/natuelabs/intelipost)
+[![Code Climate](https://codeclimate.com/github/natuelabs/intelipost/badges/gpa.svg)](https://codeclimate.com/github/natuelabs/intelipost)
+[![Test Coverage](https://codeclimate.com/github/natuelabs/intelipost/badges/coverage.svg)](https://codeclimate.com/github/natuelabs/intelipost/coverage)
+
 
 # intelipost
 Gem for the Intelipost API
