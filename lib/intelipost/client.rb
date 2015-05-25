@@ -35,6 +35,10 @@ module Intelipost
       connection.get(endpoint, args).body
     end
 
+    def post(endpoint, args = {})
+      connection.post(endpoint, args).body
+    end
+
     def method_missing(method, *args, &block)
       method = camelize method
       if Intelipost.const_defined? method
