@@ -44,26 +44,26 @@ describe Intelipost::Client, :vcr do
   context 'request quotations' do
     let(:volumes) do
       {
-        "origin_zip_code": "04037-003",
-        "destination_zip_code": "06396-200",
-        "volumes": [
+        'origin_zip_code' => '04037-003',
+        'destination_zip_code' => '06396-200',
+        'volumes' => [
           {
-            "weight": 0.1,
-            "volume_type": "BOX",
-            "cost_of_goods": 100,
-            "width": 10,
-            "height": 10,
-            "length": 10
+            'weight' => 0.1,
+            'volume_type' => 'BOX',
+            'cost_of_goods' => 100,
+            'width' => 10,
+            'height' => 10,
+            'length' => 10
           }
         ],
-        "additional_information": {
-          "free_shipping": false,
-          "extra_cost_absolute": 0,
-          "extra_cost_percentage": 0,
-          "lead_time_business_days": 0,
-          "sales_channel": "hotsite",
-          "client_type": "gold",
-          "delivery_method_ids": [
+        'additional_information' => {
+          'free_shipping' => false,
+          'extra_cost_absolute' => 0,
+          'extra_cost_percentage' => 0,
+          'lead_time_business_days' => 0,
+          'sales_channel' => 'hotsite',
+          'client_type' => 'gold',
+          'delivery_method_ids' => [
           4,
           3,
           2
