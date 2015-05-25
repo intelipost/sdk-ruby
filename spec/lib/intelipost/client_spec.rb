@@ -73,7 +73,7 @@ describe Intelipost::Client, :vcr do
     end
 
     it '.quote.create' do
-      expect(subject.quote.create(volumes)).to include({'status' => 'OK'})
+      expect(subject.quote.create(volumes)).to have_key(:content)
     end
   end
 end
