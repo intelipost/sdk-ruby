@@ -1,3 +1,5 @@
+# coding: utf-8
+
 describe Intelipost::Client, :vcr do
   subject { Intelipost::Client.new api_key: ENV['INTELIPOST_API_KEY'] }
 
