@@ -9,9 +9,12 @@ module Intelipost
     end
 
     module InstanceMethods
+      def create(post_values)
+        connection.post(endpoint, post_values)
+      end
+
       def method_missing(method, *args, &block)
-        uri = [endpoint, method, args].join '/'
-        connection.get uri
+        connection.get [endpoint, method, args].join '/'
       end
     end
   end
