@@ -26,7 +26,7 @@ module Intelipost
         conn.response :json
 
         conn.headers['api_key'] = api_key
-        conn.adapter Faraday.default_adapter
+        conn.adapter :em_http
         conn.proxy @options[:proxy]
       end
     end
