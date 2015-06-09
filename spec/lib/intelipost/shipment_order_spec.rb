@@ -1,3 +1,5 @@
+# coding: utf-8
+
 describe Intelipost::ShipmentOrder do
   subject { Intelipost::ShipmentOrder.new(double('Intelipost::Client')) }
 
