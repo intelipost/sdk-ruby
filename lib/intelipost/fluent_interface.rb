@@ -13,6 +13,10 @@ module Intelipost
         connection.post(endpoint, post_values)
       end
 
+      def get(value)
+        connection.get [endpoint, value].join '/'
+      end
+
       def method_missing(method, *args, &block)
         connection.get [endpoint, method, args].join '/'
       end
