@@ -39,7 +39,7 @@ describe Intelipost::Client, :vcr do
 
   context 'dealing with zipcode (cep)' do
     it 'returns a Hashie::Mash on successful query' do
-      expect(subject.cep.address_complete('04661100').class).to be Hashie::Mash
+      expect(subject.cep.address_complete.get('04661100').class).to be Hashie::Mash
     end
   end
 

@@ -10,11 +10,25 @@ module Intelipost
 
     module InstanceMethods
       def create(post_values)
-        connection.post(endpoint, post_values)
+        connection.post(@fluent_interfaces.join('/'), post_values)
+      end
+
+      def update(post_values)
+        create(post_values)
+      end
+
+      def get(value)
+        connection.get([@fluent_interfaces, value].join('/'))
       end
 
       def method_missing(method, *args, &block)
-        connection.get [endpoint, method, args].join '/'
+        add_fluent_interface_path(method)
+        self
+      end
+
+      private
+      def add_fluent_interface_path(method)
+        @fluent_interfaces << method
       end
     end
   end
@@ -26,6 +40,7 @@ module Intelipost
 
     def initialize(connection)
       @connection = connection
+      @fluent_interfaces = [endpoint]
     end
 
     def spawn
