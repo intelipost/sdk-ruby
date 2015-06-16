@@ -14,7 +14,7 @@ Gem for the Intelipost API
 require 'intelipost'
 
 client = Intelipost::Client.new api_key: <your api key>
-address = client.cep.address_complete '05307000'
+address = client.cep.address_complete.get '05307000'
 # => #<Hashie::Mash content=#<Hashie::Mash bairro="Vila Ribeiro de Barros" city="São Paulo" ibge="3550308" neighborhood="Vila Ribeiro de Barros" state="São Paulo" state_short="SP" street="R Maj Paladino"> messages=[] status="OK" time="0.6 ms">
 address.content.street
 # => "R Maj Paladino"
@@ -37,6 +37,22 @@ require 'intelipost'
 
 client = Intelipost::Client.new api_key: <your api key>
 client.shipment_order.create({hash_of: :intelipost, args: :values})
+````
+
+````ruby
+# POST /shipment_order/set_invoice
+require 'intelipost'
+
+client = Intelipost::Client.new api_key: <your api key>
+client.shipment_order.set_invoice.update({hash_of: :intelipost, args: :values})
+````
+
+````ruby
+# POST /shipment_order/set_tracking_data
+require 'intelipost'
+
+client = Intelipost::Client.new api_key: <your api key>
+client.shipment_order.set_tracking_data.update({hash_of: :intelipost, args: :values})
 ````
 
 ### Development:
