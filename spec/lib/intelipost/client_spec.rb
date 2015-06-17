@@ -39,11 +39,11 @@ describe Intelipost::Client, :vcr do
 
   context 'dealing with zipcode (cep)' do
     it 'returns a Hashie::Mash on successful query' do
-      expect(subject.cep.address_complete.get('04661100').class).to be Hashie::Mash
+      expect(subject.cep.address_complete.get('04661100').class).to eq Hashie::Mash
     end
   end
 
-  context 'request quotations' do
+  context 'dealing with Quotes' do
     let(:volumes) do
       {
         'origin_zip_code' => '04037-003',
@@ -76,6 +76,11 @@ describe Intelipost::Client, :vcr do
 
     it '.quote.create' do
       expect(subject.quote.create(volumes)).to have_key(:content)
+    end
+
+    it '.quote.get(#)' do
+      quote_id = subject.quote.create(volumes).content.id
+      expect(subject.quote.get(quote_id)).to have_key(:content)
     end
   end
 end

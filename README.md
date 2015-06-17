@@ -32,6 +32,13 @@ quote.content.id
 ````
 
 ````ruby
+# GET /quote/{id}
+require 'intelipost'
+client = Intelipost::Client.new api_key: <your api key>
+quote = client.quote.get(124560)
+````
+
+````ruby
 # POST /shipment_order
 require 'intelipost'
 

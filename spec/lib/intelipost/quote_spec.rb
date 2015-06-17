@@ -35,4 +35,10 @@ describe Intelipost::Quote do
     expect(subject.connection).to receive(:post).with('quote', volumes)
     subject.create(volumes)
   end
+
+  it 'will pull an existing quote by its id' do
+    id = 99
+    expect(subject.connection).to receive(:get).with("quote/#{id}")
+    subject.get(99)
+  end
 end
