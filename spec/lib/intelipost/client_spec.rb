@@ -19,6 +19,12 @@ describe Intelipost::Client, :vcr do
     end
   end
 
+  context 'when call for an non existing defined class' do
+    it '.method_missing' do
+      expect { subject.foobar(1) }.to raise_error ArgumentError
+    end
+  end
+
   context 'initialized with credentials' do
     describe '#connection' do
       it 'is an instance of Faraday::Connection' do
