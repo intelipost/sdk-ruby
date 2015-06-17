@@ -58,4 +58,48 @@ describe Intelipost::ShipmentOrder do
     expect(subject.connection).to receive(:post).with('shipment_order', order_to_ship)
     subject.create(order_to_ship)
   end
+
+  let(:order_invoice) do
+    {
+      'order_number' => '12314324',
+      'shipment_order_volume_invoice_array' => [
+        {
+          'shipment_order_volume_number' => '1',
+          'invoice_series' => '123123123',
+          'invoice_number' => 'BR283248123',
+          'invoice_key' => 'CDFx2342396078192310231982',
+          'invoice_date' => '2014-02-28',
+          'invoice_total_value' => '32,49',
+          'invoice_products_value' => '28,99',
+          'invoice_cfop' => '5120'
+        }
+      ]
+    }
+  end
+
+  it 'invoice update' do
+    expect(subject.connection).to receive(:post).with('shipment_order/set_invoice', order_invoice)
+    subject.set_invoice.update(order_invoice)
+  end
+
+  let(:order_tracking_code) do
+    {
+      'order_number' => 'BR12345',
+      'tracking_data_array' => [
+      {
+        'shipment_order_volume_number' => 1,
+        'tracking_code' => 'SW123456789BR'
+      },
+      {
+        'shipment_order_volume_number' => 2,
+        'tracking_code' => 'SW123456789BR'
+      }
+      ]
+    }
+  end
+
+  it 'tracking update' do
+    expect(subject.connection).to receive(:post).with('shipment_order/set_tracking_data', order_tracking_code)
+    subject.set_tracking_data.update(order_tracking_code)
+  end
 end
