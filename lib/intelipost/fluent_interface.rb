@@ -1,5 +1,22 @@
 module Intelipost
   module FluentInterface
+
+    def self.included(cls)
+      cls.extend(ClassMethods)
+    end
+
+    def create(post_values)
+      connection.post(endpoint, post_values)
+    end
+
+    def get(value)
+      connection.get [endpoint, value].join '/'
+    end
+
+    def method_missing(method, *args, &block)
+      connection.get [endpoint, method, args].join '/'
+    end
+
     module ClassMethods
       def set_endpoint endpoint
         define_method :endpoint do
@@ -7,21 +24,10 @@ module Intelipost
         end
       end
     end
-
-    module InstanceMethods
-      def create(post_values)
-        connection.post(endpoint, post_values)
-      end
-
-      def method_missing(method, *args, &block)
-        connection.get [endpoint, method, args].join '/'
-      end
-    end
   end
 
   class FluentInterfaceBase
-    extend Intelipost::FluentInterface::ClassMethods
-    include Intelipost::FluentInterface::InstanceMethods
+    include Intelipost::FluentInterface
     attr_accessor :connection
 
     def initialize(connection)
