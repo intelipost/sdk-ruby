@@ -102,4 +102,10 @@ describe Intelipost::ShipmentOrder do
     expect(subject.connection).to receive(:post).with('shipment_order/set_tracking_data', order_tracking_code)
     subject.set_tracking_data.update(order_tracking_code)
   end
+
+  it 'read status from API' do
+    order_id = 128492394
+    expect(subject.connection).to receive(:get).with("shipment_order/read_status/#{order_id}")
+    subject.read_status.get(order_id)
+  end
 end

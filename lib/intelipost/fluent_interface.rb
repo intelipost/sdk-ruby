@@ -44,9 +44,5 @@ module Intelipost
       @connection = connection
       @fluent_interfaces = [endpoint]
     end
-
-    def spawn
-      clone
-    end
   end
 end
