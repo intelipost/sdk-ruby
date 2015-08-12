@@ -49,8 +49,8 @@ describe Intelipost::Client, :vcr do
       expect(response.class).to eq Intelipost::Mash
       expect(response.success?).to eq true
       expect(response.failure?).to eq false
-      expect(response.all_messages).to eq ''
-      expect(response.messages).to be_empty
+      expect(response.all_messages).not_to eq ''
+      expect(response.messages).not_to be_empty
     end
   end
 
