@@ -3,7 +3,7 @@ describe Intelipost::Mash do
     mash = Intelipost::Mash.new({status: 'OK'})
     expect(mash.success?).to eq true
     expect(mash.failure?).to eq false
-    expect(mash.all_messages).to eq false
+    expect(mash.all_messages).to eq nil
   end
 
   it 'will create a intelipost mash and check if it is a failure response' do
