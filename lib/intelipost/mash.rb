@@ -1,6 +1,7 @@
 module Intelipost
   class Mash < ::Hashie::Mash
     def success?
+      return false unless self.has_key?('status')
       self.status == 'OK'
     end
 
@@ -9,6 +10,7 @@ module Intelipost
     end
 
     def all_messages
+      return false unless self.has_key?('messages')
       self.messages.map(&:text).join(';')
     end
   end

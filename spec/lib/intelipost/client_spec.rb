@@ -50,6 +50,7 @@ describe Intelipost::Client, :vcr do
       expect(response.success?).to eq true
       expect(response.failure?).to eq false
       expect(response.all_messages).to eq ''
+      expect(response.messages).to be_empty
     end
   end
 
@@ -93,6 +94,7 @@ describe Intelipost::Client, :vcr do
       expect(response.success?).to eq false
       expect(response.failure?).to eq true
       expect(response.all_messages).not_to eq ''
+      expect(response.messages).not_to be_empty
     end
 
     it '.quote.get(#)' do
