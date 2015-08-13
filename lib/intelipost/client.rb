@@ -1,3 +1,5 @@
+require 'intelipost/mash'
+
 module Intelipost
   class Client
     HOST        = 'api.intelipost.com.br'
@@ -24,7 +26,7 @@ module Intelipost
       Faraday.new(url: @uri.to_s) do |conn|
         conn.request :json
 
-        conn.response :mashify
+        conn.response :mashify, { mash_class: Intelipost::Mash }
         conn.response :json
 
         conn.headers['api_key'] = api_key
