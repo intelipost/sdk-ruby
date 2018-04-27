@@ -75,12 +75,7 @@ describe Intelipost::Client, :vcr do
           'extra_cost_percentage' => 0,
           'lead_time_business_days' => 0,
           'sales_channel' => 'hotsite',
-          'client_type' => 'gold',
-          'delivery_method_ids' => [
-          4,
-          3,
-          2
-          ]
+          'client_type' => 'gold'
         }
       }
     end
