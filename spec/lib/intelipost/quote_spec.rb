@@ -3,7 +3,7 @@ describe Intelipost::Quote do
 
   let(:volumes) do
     {
-      'origin_zip_code' => '04037-003',
+      'origin_zip_code' => '04162-001',
       'destination_zip_code' => '06396-200',
       'volumes' => [
         {
@@ -14,20 +14,7 @@ describe Intelipost::Quote do
           'height' => 10,
           'length' => 10
         }
-      ],
-      'additional_information' => {
-        'free_shipping' => false,
-        'extra_cost_absolute' => 0,
-        'extra_cost_percentage' => 0,
-        'lead_time_business_days' => 0,
-        'sales_channel' => 'hotsite',
-        'client_type' => 'gold',
-        'delivery_method_ids' => [
-        4,
-        3,
-        2
-        ]
-      }
+      ]
     }
   end
 

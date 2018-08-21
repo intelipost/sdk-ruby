@@ -35,6 +35,20 @@ quote.content.id
 # => 4347667
 ````
 
+
+#### Quote By Product (Cotação por produto)
+
+````ruby
+# POST /quote
+require 'intelipost'
+
+client = Intelipost::Client.new api_key: <your api key>
+quote = client.quote_by_product.create({hash_of: :intelipost, args: :values})
+# => #<Hashie::Mash content=#<Hashie::Mash additional_information=#<Hashie::Mash client_type="gold" delivery_method_ids=[4, 3, 2] extra_cost_absolute=0.0 extra_cost_percentage=0.0 free_shipping=false lead_time_business_days=0 sales_channel="hotsite" tax_id=nil> client_id=1783 created=1433872646799 created_iso="2015-06-09T14:57:26.799-03:00" delivery_options=[#<Hashie::Mash delivery_estimate_business_days=1 delivery_method_id=4 delivery_method_name="Total Express" delivery_method_type="EXPRESS" delivery_note=nil description="Total Express" final_shipping_cost=5.05 logistic_provider_name="Total" provider_shipping_cost=5.05>, #<Hashie::Mash delivery_estimate_business_days=1 delivery_method_id=3 delivery_method_name="Correios eSedex" delivery_method_type="EXPRESS" delivery_note=nil description="Correios eSedex" final_shipping_cost=7.83 logistic_provider_name="Correios" provider_shipping_cost=7.83>, #<Hashie::Mash delivery_estimate_business_days=1 delivery_method_id=2 delivery_method_name="Correios Sedex" delivery_method_type="EXPRESS" delivery_note=nil description="Correios Sedex" final_shipping_cost=13.83 logistic_provider_name="Correios" provider_shipping_cost=13.83>] destination_zip_code="06396-200" id=4347667 origin_zip_code="04037-003" platform=nil products=[#<Hashie::Mash weight=5 cost_of_goods=100 width=10.0 height=10.0 length="BOX" quantity=1 sku_id=2323232 product_category=Calçados>]> messages=[] status="OK" time="34.0 ms">
+quote.content.id
+# => 4347667
+````
+
 ````ruby
 # GET /quote/{id}
 require 'intelipost'
